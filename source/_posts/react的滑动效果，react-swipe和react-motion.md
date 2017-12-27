@@ -50,8 +50,9 @@ transitionEnd：滑动动画结束时调用，callback(index, item), index为当
 github地址：[react-swipe](https://github.com/voronianski/react-swipe) 、[swipe-js-iso](https://github.com/voronianski/swipe-js-iso)
 
 ### react-motion
-在没实际写上代码测试时候，对motion的概念感觉似懂非懂，翻了很多介绍react-motion的资料，在写下测试代码之后，自己理解react-motion做了对
-动画过程中从A点到B点平滑的变化数值，比自己实现的定时滑动会更加的平滑自然。
+在没实际写代码测试时候，对motion的概念感觉似懂非懂，翻了很多介绍react-motion的资料，在写了代码测试之后，理解react-motion是做了对
+动画过程中从A点到B点平滑的变化数值，在数值变化过程中，react-motion会不断的调用回调方法，把变动的数值传入到需要渲染的dom中，
+这个比自己实现的定时滑动会更加的平滑自然。
 
 因为要兼容手机不同分辨率滑动的单位距离不一致，所以在Motion的外层div的onLoad事件中，每次通过元素的clientWidth来获得滑动的距离，在react中不得已使用了
 dom，谁有更好的办法欢迎告诉我。
@@ -63,7 +64,7 @@ const newStepbarLeft = stepbarLeft*curQuestionIndex;
 const currentNode = (
   <Motion defaultStyle={{left: oldStepbarLeft }} style={{left: spring(newStepbarLeft)}}>
     {
-      // 在动画执行过程中，react-motion会不断的会掉此方法，返回动画进行过程中相应的数值，可以自己cosole输出interpolatingStyle看
+      // 在动画执行过程中，react-motion会不断的调用此方法，返回动画进行过程中相应的数值，可以自己cosole输出interpolatingStyle看
       interpolatingStyle => {
         return (
           <div className="questionPageCurNode" style={interpolatingStyle}>
@@ -91,5 +92,5 @@ return (
   </div>
 );
 ```
-
+github地址：[react-motion](https://github.com/chenglou/react-motion)
 Motion参考资料：[React Motion 缓动函数剖析](https://segmentfault.com/a/1190000004224778)
