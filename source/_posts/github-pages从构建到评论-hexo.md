@@ -26,7 +26,7 @@ GitHub Pages 本用于介绍托管在 GitHub 的项目， 不过，由于他的�
 ## 开始Hexo
 首先本地得装上了Node.js、Git和Hexo
 	安装Node.js: [Nodejs官网](https://nodejs.org/en/)
-	安装Git: [Git](http://git-scm.com/) 
+	安装Git: [Git](http://git-scm.com/)
 			[安装Git - 廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000/ "安装Git - 廖雪峰的官方网站")
 	安装Hexo: [Hexo](https://hexo.io/ "hexo官网")
 
@@ -67,16 +67,16 @@ Enter same passphrase again:<再次输入加密串>
 ``` bash
 ssh -T git@github.com
 ```
-### 多个SSH Key
+### 多个SSH Key, 具体可查看[链接](http://gaowen.site/2018/01/04/Mac%E4%B8%8Bgit%E5%A4%9A%E4%B8%AASSH-KEY%E9%85%8D%E7%BD%AE/)
 1.生成指定名字的密钥
-```bash 
+```bash
 ssh-keygen -t rsa -C "邮箱地址" -f ~/.ssh/id_rsa_github
 ```
 
 	会生成id_rsa.pub和id_rsa_github两个文件
 2.密钥复制到托管平台上
-```bash 
-$  vim ~/.ssh/id_rsa_github.pub 
+```bash
+$  vim ~/.ssh/id_rsa_github.pub
 ```
 3.修改config文件
 ```bash
@@ -202,4 +202,3 @@ Hexo有很多可以选择的主题，可以在下面的链接中选择自己喜�
 ## 图床
 考虑到博客的速度，同时也为了便于博客的迁移，图床是必须的。可以看一下[七牛](http://www.qiniu.com/)，访问速度极快，支持日志、防盗链和水印。
 也还可以考虑下面的图床服务 [FarBox](http://www.farbox.com/) ， [Dropbox](http://www.dropbox.com/) ， [又拍云](http://www.upyun.com/) 。
-
