@@ -62,7 +62,7 @@ Host company
 解释一下这个配置文件：
 
 Host：一个"别名"，可以随意命名, 像git、company这样的命名也可以；
-HostName：工作的git仓储地址;
+HostName：工作的git仓库存储地址;
 IdentityFile： 所使用的公钥文件
 配置完毕，用下面的命令测试一下：
 
